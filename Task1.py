@@ -1,0 +1,17 @@
+import tkinter as tk
+def add_entry(event=None):
+    frame = tk.Frame(root,bg="#ADD8E6")
+    frame.pack(pady=20,anchor='w')
+    var=tk.BooleanVar()
+    check=tk.Checkbutton(frame,variable=var,bg="#333333",fg="white",selectcolor="black")
+    check.pack(side='left',padx=5)
+    new_entry=tk.Text(frame,bg="#222222",fg="white",insertbackground="white",highlightbackground="purple",height=2)
+    new_entry.pack(side='left')
+    new_entry.bind("<Return>", add_entry) 
+    new_entry.focus_set()  
+root = tk.Tk()
+root.geometry('900x1600')
+root.title("To-Do List")
+root.configure(bg="#ADD8E6")
+add_entry()
+root.mainloop()
